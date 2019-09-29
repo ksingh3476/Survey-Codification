@@ -1,0 +1,87 @@
+swagger: "2.0"
+info:
+  description: "This is the documentation for the Survey Codifier."
+  version: "1.0.0"
+  title: "Survey Codifier"
+paths:
+
+  /preuploader:
+    get:
+      summary:
+      description:
+      operationId: "upload_file"
+      produces:
+      - "application/json"
+      responses:
+        405:
+          description: "Invalid input"
+        200:
+          description: "Successfully parsed pre-survey"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/parsed_doc'
+
+  /postuploader:
+    get:
+      summary:
+      description:
+      operationId: "upload_file"
+      produces:
+      - "application/json"
+      responses:
+        405:
+          description: "Invalid input"
+        200:
+          description: "Successfully parsed post-survey"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/parsed_doc'
+    
+  /return_template:
+  get:
+    summary: Downloads a demo word document
+    description:
+    operationId: "return_file"
+    produces:
+    - "application/json"
+    responses:
+      400:
+        description: "Could not download survey"
+      200:
+        description: "Successfully Downloaded demo survey"
+        schema:
+          type: string
+          format: binary
+
+
+
+
+
+definitions:
+  
+  question:
+    description: "An object that has all of the catergorized info of a survey question "
+    type: object
+    properties:
+      question_num:
+        type: number
+          properties:
+            answers:
+              type: array
+            metric:
+              type: string
+            question:
+              type: string
+            qtype:
+              type: string
+
+  parsed_doc:
+    description: " An object that has all of the questions stored in an array"
+    type: array
+    items:
+      $ref: '#/definitions/question'
+
+
+     

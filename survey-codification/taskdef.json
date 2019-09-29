@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::619065725320:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "survey-codification",
+            "image": "619065725320.dkr.ecr.us-west-2.amazonaws.com/survey-codification:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "family": "survey-codification"
+}

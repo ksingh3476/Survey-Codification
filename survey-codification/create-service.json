@@ -1,0 +1,29 @@
+{
+    "taskDefinition": "survey-codification:1",
+    "cluster": "survey-codification",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:619065725320:targetgroup/survey-codification/6e24102abbb97b8f",
+            "containerName": "survey-codification",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "ECS"
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-08fdd074be21ca030",
+                "subnet-096f5af6db6f0da32"
+            ],
+            "securityGroups": [
+                "sg-ca35d3ae"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}

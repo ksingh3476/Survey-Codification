@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<style>
+   .header {
+  padding: 10px;
+  text-align: left;
+  background: purple;
+  color: white;
+  font-size: 40px;
+ }
+
+
+ .first-header-link{
+   padding-left: 100px;
+   font-size: 30px;
+   color: White;
+
+}
+
+.header:hover{
+    color: White;
+    text-decoration: None;
+ }
+
+ .header:link{
+    color: White
+ }
+
+.first-header-link:hover {
+  color: White;
+}
+
+</style>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <div class="header"> <b> <a class= "header" href  = "http://localhost:5000/"> Survey Codifier </a> </b> 
+      <a class = "first-header-link" href = "http://localhost:5000/show-metrics"> Metrics</a>   
+      <a class = "first-header-link" href = "http://localhost:5000/show-questioninfo"> Question Types</a>
+   </div>
+<body>
+
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Horizontal</td>
+      <td>This tag is used to describe the X axis of a grid type question.</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Vertical</td>
+      <td>This tag is used to describe the Y axis of a grid type question.</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row">3</th>
+      <td>Single Response</td>
+      <td>Used to identify questions that require the user to only select one of the given answers. Ex. Please select your favorite genre of movies.</td>
+    </tr>
+
+    <tr>
+      <th scope="row">4</th>
+      <td>Multiple Response</td>
+      <td> Used to identify questions that allow the user to select one or more of the of the given answers. Ex. How would you characterize this trailer? Please select all that apply.</td>
+   </tr>
+
+   <tr>
+         <th scope="row">5</th>
+         <td>Grid Response</td>
+         <td>A question in which an horizontal and vertical axis is used, that way a range of responses can be recorded. Ex. How likely are you to take the following actions? Please select all, Extremely likely, Very likely, Somewhat likely, Not so likely, Not at all likely. </td>
+      </tr>
+
+      <tr>
+         <th scope="row">6</th>
+         <td>Open Ended</td>
+         <td>This tag identifies questions that do not have a series of answers to select from instead the user 
+            may respond as they wish. Ex. What motivates you most to watch a movie?
+         </td>
+      </tr>
+
+
+  </tbody>
+</table>
+ 
+
+</body>
+</html>

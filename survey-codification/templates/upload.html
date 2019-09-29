@@ -1,0 +1,188 @@
+<html>
+   <style>
+
+a { color: #FF0000; }
+
+   .fileSubmitButton {
+      padding-left: 20px;
+   }
+
+   .preSurvey {
+      padding-left: 20px;
+      color: Black
+   }
+
+   .postSurvey {
+      padding-left: 20px;
+      color: Black
+   }
+
+   .downloadTemplate {
+      padding-left: 20px;
+      color: Black
+   }
+
+
+   .header {
+  padding: 10px;
+  text-align: left;
+  background: purple;
+  color: white;
+  font-size: 40px;
+ }
+
+ .header:hover{
+    color: White;
+    text-decoration: None;
+ }
+
+ .header:link{
+    color: White
+ }
+
+   .downloadButton{
+      margin: 20px;
+   }
+
+
+   .split {
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color:Purple;
+}
+
+/* Control the right side */
+.right {
+  right: 30;
+  background-color: White;
+  padding-top: 20px;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.head-text {
+   top: 40px;
+   padding-bottom: 15px; 
+   font-size: 35px;
+}
+
+.step-one{
+   padding-left: 20px;
+   padding-bottom: 5px;
+   padding-right: 20px;
+}
+
+.step-1{
+   padding-left: 20px;
+   padding-bottom: 5px;
+   padding-right: 20px;
+   padding-top: 15px;
+}
+
+.first-header-link{
+   padding-left: 100px;
+   font-size: 30px;
+   color: White;
+
+}
+
+.first-header-link:hover {
+  color: White;
+}
+
+.space{
+   padding: 20px;
+}
+
+.header2{
+   color:white;
+   size: 10px;
+}
+
+
+   </style>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <div class="header"> <b> <a class= "header" href  = "http://localhost:5000/"> Survey Codifier </a> </b> 
+      <a class = "first-header-link" href = "http://localhost:5000/show-metrics"> Metrics</a>   
+      <a class = "first-header-link" href = "http://localhost:5000/show-questioninfo"> Question Types</a>
+   </div>
+   <div class  = "header2"> <h1> space </h1> </div>
+   <body>
+         <div style="float: left; width: 40%">
+               
+               <div class="centered">
+                     
+               </div>
+                  <br> <p1 class = "preSurvey">Pre-Survey </p1>
+
+                  <form action = "http://localhost:5000/preuploader" method = "POST"
+                     enctype = "multipart/form-data">
+                     <input type = "file" name = "file" class="fileSubmitButton" />
+                     <input type  = "submit" />
+                  </form>
+
+                  <br> <p1 class = "postSurvey" >Post-Survey</p1>
+                  <form action = "http://localhost:5000/postuploader" method = "POST"
+                     enctype = "multipart/form-data">
+                     <input type = "file" name = "file" class="fileSubmitButton" />
+                     <input type = "submit"/>
+                  </form>
+
+                  <br>
+                  <br> <p1 class = "downloadTemplate">Download Template</p1>
+                  <br>
+
+                  <form>
+                     <input class = "downloadButton" type="button" value="Download" onclick="window.location.href='http://localhost:5000/return_template'" />
+                  </form>
+               </div>
+         </div>
+             
+             <div style="float: right; width: 60%">
+
+                  
+                
+                 <h class = "head-text"> Steps and Documentation </h>
+
+                 <p style="text-align:left" class = "step-1"  > 1) Download the template and modify the questions given at your discretion, taking care to keep the same 
+                        format of the downloaded document. The given document is divided using heading styles, the question is of type "Heading 1" and 
+                        the answers are of type "Normal". (Word default text)
+                 </p>
+
+                 <p style = "text-align: left" class = "step-one"> 2) Submit the modified word document, a JSON object is returned. </p>
+
+                 <p style = "text-align: left" class = "step-one"> 3) The object is structured with the question number as a key
+               and the question type, metric type, answers and literal question are an array of attributes. </p>
+                 
+               <h class = "head-text"> Parser Logic</h >
+
+               <p style = "text-align: left" class = "step-1"> The parser is a Python application that uses the Python-docx and lxml libraries. 
+               It utilizes tags and heading styles to differentiate each question and its respective answers. The tags function as a simple text protoccol so the
+            parser can identify which portions of the text correspond with the information we would like to obtain. Example for metric types: /*LIFT*/ 
+           example for type of question: /*SINGLE RESPONSE*/. </p>
+               </div>
+             </div>
+      </div>  
+   </body>
+</html>

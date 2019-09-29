@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<style>
+   .header {
+  padding: 10px;
+  text-align: left;
+  background: purple;
+  color: white;
+  font-size: 40px;
+ }
+
+ .header:hover{
+    color: White;
+    text-decoration: None;
+ }
+
+ .header:link{
+    color: White
+ }
+
+
+.urgency-text{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+.first-header-link{
+   padding-left: 100px;
+   font-size: 30px;
+   color: White;
+
+}
+
+.first-header-link:hover {
+  color: White;
+}
+
+
+</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="header"> <b> <a class= "header" href  = "http://localhost:5000/"> Survey Codifier </a> </b> 
+    <a class = "first-header-link" href = "http://localhost:5000/show-metrics"> Metrics</a>   
+    <a class = "first-header-link" href = "http://localhost:5000/show-questioninfo"> Question Types</a>
+ </div>
+
+<body>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Metric</th>
+                    <th scope = "col"> Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Relevance</td>
+                    <td>Gauges how relevant the asset is to the user, seeing whether or not it is relevant to their 
+                        demographic. Ex How relevant is the ad to your choice of Superbowl ads?
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Lift</td>
+                    <td>Takes into account both the pre and post survey to see if the asset had an impact on the user.
+                        Ex. How much interested are you in seeing the ad of XXXXXXXX in Superbowl?
+                        Ex. Based on the preview you just saw, how much interested are you in seeing the ads of XXXXXXXX in the Superbowl?
+                    </td>
+                    
+                  </tr>
+
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Virality</td>
+                    <td>Attempts to display how likely it would be for the user to share this content and finds it relatable
+                        Ex. How would you characterize this advertisement? Please select all that apply.
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Persuasion</td>
+                    <td>Did the asset effectively persuade the user into pursuing the marketed product.
+                        Ex. How likely are you to take the following actions?
+                    </td>
+
+                  </tr>
+
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Intent</td>
+                    <td>This metric works in tandem with Lift, gauging the intent of the user in pursuing the marketed product.
+                        Ex. Based on the preview you just saw, how much interested are you in seeing the ads of XXXXXXXX in the Superbowl?
+                    </td>
+                  </tr>
+
+
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Recall</td>
+                    <td>Identifies if the user was able to successfully remeber the creator of the content of they
+                        had just watched. Ex. Who was the sponsor of the video you just saw? 
+                    </td>
+                        
+                </tr>
+
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Awareness</td>
+                    <td>Tests the users knowledge of the brand or content prior to viewing the asset.
+                        Ex. Which of the following company’s ad have you watch in the Superbowl? Please select all that apply.
+                    </td>
+                            
+                </tr>
+
+                      
+
+                </tbody>
+              </table>
+
+ 
+</body>
+</html>
